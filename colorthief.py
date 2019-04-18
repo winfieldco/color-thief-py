@@ -67,10 +67,9 @@ class ColorThief(object):
         valid_pixels = []
         for i in range(0, pixel_count, quality):
             r, g, b, a = pixels[i]
-            # If pixel is mostly opaque and not white
+            # If pixel is mostly opaque
             if a >= 125:
-                if not (r > 250 and g > 250 and b > 250):
-                    valid_pixels.append((r, g, b))
+                valid_pixels.append((r, g, b))
 
         # Send array to quantize function which clusters values
         # using median cut algorithm
